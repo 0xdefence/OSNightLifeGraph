@@ -1,0 +1,9 @@
+{
+  "name": "darkknight",
+  "private": true,
+  "scripts": {
+    "dev:web": "pnpm --filter @darkknight/web dev",
+    "build:web": "pnpm --filter @darkknight/web build",
+    "lint:web": "pnpm --filter @darkknight/web lint"
+  }
+}

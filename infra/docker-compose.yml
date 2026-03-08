@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: darkknight-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: darkknight
+      POSTGRES_PASSWORD: darkknight
+      POSTGRES_DB: darkknight
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:

@@ -1,0 +1,16 @@
+[project]
+name = "darkknight-optimizer"
+version = "0.1.0"
+description = "C++ itinerary scoring optimizer with Python fallback"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+build = [
+    "pybind11>=2.13.0",
+    "cmake>=3.28.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
