@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Search } from "lucide-react";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -16,21 +17,16 @@ export function SearchBar({ onSearch, isLoading }: SearchBarProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form onSubmit={handleSubmit} className="relative flex items-center group">
+      <Search className="absolute left-3 w-4 h-4 text-neutral-400 group-focus-within:text-neutral-900 transition-colors" />
       <input
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        placeholder="Search venues or describe your night..."
-        className="flex-1 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-gray-400 focus:outline-none"
-      />
-      <button
-        type="submit"
+        placeholder="Search specific places or vibes..."
         disabled={isLoading}
-        className="rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800 disabled:opacity-50"
-      >
-        Search
-      </button>
+        className="w-full h-9 pl-9 pr-4 rounded-md bg-neutral-100/70 border border-transparent focus:bg-white focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 outline-none text-sm transition-all placeholder:text-neutral-500 disabled:opacity-50"
+      />
     </form>
   );
 }

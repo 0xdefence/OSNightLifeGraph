@@ -33,7 +33,7 @@ export function PlanForm({ onGenerate, isLoading }: PlanFormProps) {
       area: area || undefined,
       budget_total: budget ? Number(budget) : undefined,
       party_size: partySize ? Number(partySize) : undefined,
-      start_time: startTime,
+      start_time: new Date(`2026-03-14T${startTime}:00`).toISOString(),
     });
   }
 
